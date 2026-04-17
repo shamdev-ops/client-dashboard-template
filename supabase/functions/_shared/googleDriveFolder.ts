@@ -1,6 +1,4 @@
-/**
- * Extract Google Drive folder ID from a raw ID or share link.
- */
+/** Extract Google Drive folder ID from a raw ID or share URL (same rules as app `driveFolderLinks`). */
 export function extractGoogleDriveFolderId(input: string): string | null {
   const trimmed = input.trim();
   if (!trimmed) return null;
@@ -25,7 +23,6 @@ export function extractGoogleDriveFolderId(input: string): string | null {
   return null;
 }
 
-/** Mask API key for display after save (never show full key again in UI). */
 export function maskGoogleDriveApiKey(key: string): string {
   const t = key.trim();
   if (!t) return '';
